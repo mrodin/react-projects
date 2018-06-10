@@ -1,3 +1,44 @@
-body {
-  background: green;
+/**
+* GLOBAL STYLES
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.flexContainer {
+  display: flex;
+}
+.flexItem {
+  flex: 1;
+}
+.flexStart {
+  justify-content: flex-start;
+}
+.flexEnd {
+  justify-content: flex-end;
+}
+.blueBackground {
+  background: lightskyblue;
+}
+
+/**
+* NAVIGATION
+*/
+
+nav {
+  padding: 20px;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  display: block;
+  padding: 0 1em;
+  color: white;
 }
