@@ -1,10 +1,13 @@
 import React from 'react';
-import Navigation from './Navigation';
 
 class Home extends React.Component {
   render() {
     return (
-      <Navigation />
+      <div class="flex-container flex-center item-center full-height green-background">
+        <div class="flex-container flex-center item-center full-height">
+          <a href="index.html" class="homeButton">Return Home</a>
+        </div>
+      </div>
     )
   }
 }

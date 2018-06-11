@@ -8,20 +8,32 @@
   box-sizing: border-box;
 }
 
-.flexContainer {
+.flex-container {
   display: flex;
 }
-.flexItem {
+
+.flex-item {
   flex: 1;
 }
-.flexStart {
+
+.flex-center {
+  justify-content: center;
+}
+
+.flex-start {
   justify-content: flex-start;
 }
-.flexEnd {
+
+.flex-end {
   justify-content: flex-end;
 }
-.blueBackground {
-  background: lightskyblue;
+
+.full-height {
+  height: 100vh;
+}
+
+.item-center {
+  align-items: center;
 }
 
 /**
@@ -41,4 +53,21 @@ nav a {
   display: block;
   padding: 0 1em;
   color: white;
+}
+
+.blue-background {
+  background: lightskyblue;
+}
+
+/**
+* HOME
+*/
+
+.green-background {
+  background: lightgreen;
+}
+
+.center-image {
+  /* background: url('./trianglify.svg') center; */
+  background-size: cover;
 }
