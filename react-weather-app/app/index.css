@@ -8,32 +8,10 @@
   box-sizing: border-box;
 }
 
-.flex-container {
+.wrapper {
   display: flex;
-}
-
-.flex-item {
-  flex: 1;
-}
-
-.flex-center {
-  justify-content: center;
-}
-
-.flex-start {
-  justify-content: flex-start;
-}
-
-.flex-end {
-  justify-content: flex-end;
-}
-
-.full-height {
   height: 100vh;
-}
-
-.item-center {
-  align-items: center;
+  flex-direction: column;
 }
 
 /**
@@ -41,6 +19,8 @@
 */
 
 nav {
+  display: flex;
+  background: lightskyblue;
   padding: 20px;
 }
 
@@ -55,19 +35,25 @@ nav a {
   color: white;
 }
 
-.blue-background {
-  background: lightskyblue;
+.app-title {
+  flex: 1;
+  justify-content: flex-start;
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-end;
 }
 
 /**
 * HOME
 */
 
-.green-background {
+.home-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: lightgreen;
-}
-
-.center-image {
-  /* background: url('./trianglify.svg') center; */
-  background-size: cover;
+  flex: 1;
+  overflow: auto;
 }

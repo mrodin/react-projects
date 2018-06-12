@@ -2,11 +2,11 @@ import React from 'react';
 
 export default function Navigation() {
   return (
-    <nav className='flex-container blue-background'>
-      <ul className='flex-item flex-start'>
+    <nav>
+      <ul className='app-title'>
         <li><a href="#">React Weather App</a></li>
       </ul>
-      <ul className='flex-container flex-end'>
+      <ul className='menu'>
         <li><a href="#">Home</a></li>
         <li><a href="#">Products</a></li>
         <li><a href="#">About</a></li>
