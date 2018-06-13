@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .wrapper {
@@ -20,7 +21,7 @@
 
 nav {
   display: flex;
-  background: lightskyblue;
+  background: #39A6C2;
   padding: 20px;
 }
 
@@ -53,7 +54,6 @@ nav a {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: lightgreen;
+  background: url('./trianglify.svg');
   flex: 1;
-  overflow: auto;
 }
