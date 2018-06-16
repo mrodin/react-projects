@@ -1,4 +1,5 @@
 import React from 'react';
+import CityStateForm from './CityStateForm';
 
 class Home extends React.Component {
   render() {
@@ -6,10 +7,7 @@ class Home extends React.Component {
       <div className='home-wrapper'>
         <div className='form-wrapper'>
           <div className='hint'>Enter a City and State</div>
-          <form>
-            <input type='text' />
-            <button>Get Weather</button>
-          </form>
+          <CityStateForm />
         </div>
       </div>
     )

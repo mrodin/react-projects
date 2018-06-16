@@ -43,11 +43,6 @@ nav a {
   font-weight: 100;
 }
 
-.menu {
-  display: flex;
-  justify-content: flex-end;
-}
-
 /**
 * HOME
 */
@@ -58,6 +53,7 @@ nav a {
   align-items: center;
   background: url('./trianglify.svg');
   flex: 1;
+  overflow: hidden;
 }
 
 .form-wrapper, .form-wrapper form {
@@ -77,9 +73,10 @@ input {
   width: 250px;
   height: 40px;
   border: 1px solid #39A6C2;
-  padding: 1.5em;
+  padding: 1em;
   margin: 0.3em;
   border-radius: 5px;
+  color: #586069
 }
 
 button {
