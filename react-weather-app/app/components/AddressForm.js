@@ -9,22 +9,40 @@ class AddressForm extends React.Component {
     }
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange() {
+  handleChange(event) {
+    const value = event.target.value;
 
+    this.setState(() => {
+      return { address: value }
+    });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    
+    this.props.onSubmit(this.state.address);
   }
 
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <input
           id='address'
           placeholder='Brno, Czechia'
           type='text'
           autoComplete='off'
+          value={this.state.address}
+          onChange={this.handleChange}
         />
-        <button>Get Weather</button>
+        <button
+          type='submit'
+          disabled={!this.state.address}
+        >
+          Get Weather
+        </button>
       </form>
     )
   }
