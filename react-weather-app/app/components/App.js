@@ -1,6 +1,7 @@
 import React from 'react';
 import Navigation from './Navigation';
 import Home from './Home';
+import { getCurrentWeather } from '../utils/api';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,6 +12,11 @@ class App extends React.Component {
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  async componentDidUpdate() {
+    const forecast = await getCurrentWeather(this.state.address);
+    console.log(forecast);
   }
 
   handleSubmit(address) {
