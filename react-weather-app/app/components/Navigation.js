@@ -1,11 +1,13 @@
 import React from 'react';
+import AddressForm from './AddressForm';
 
-export default function Navigation() {
+export default function Navigation(props) {
   return (
     <nav>
-      <ul className='app-title'>
-        <li><a href="#">React Weather App</a></li>
-      </ul>
+      <div className='app-title'>
+        <a href="#">React Weather App</a>
+      </div>
+      <AddressForm onSubmit={props.onSubmit} />
     </nav>
   )
 }

@@ -23,24 +23,18 @@ nav {
   display: flex;
   background: #39A6C2;
   padding: 1em;
-}
-
-nav ul {
-  list-style: none;
-}
-
-nav a {
-  text-decoration: none;
-  display: block;
-  padding: 0 1em;
-  color: white;
+  justify-content: space-between;
 }
 
 .app-title {
-  flex: 1;
-  justify-content: flex-start;
   font-size: 2em;
   font-weight: 100;
+}
+
+.app-title a {
+  text-decoration: none;
+  display: block;
+  color: white;
 }
 
 /**

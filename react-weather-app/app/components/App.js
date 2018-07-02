@@ -28,7 +28,7 @@ class App extends React.Component {
   render() {
     return (
       <div className='wrapper'>
-        <Navigation />
+        <Navigation onSubmit={this.handleSubmit} />
         <Home onSubmit={this.handleSubmit} />
       </div>
     )
