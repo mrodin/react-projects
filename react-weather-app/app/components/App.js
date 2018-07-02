@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Navigation from './Navigation';
 import Home from './Home';
 import { getCurrentWeather } from '../utils/api';
@@ -27,10 +28,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className='wrapper'>
-        <Navigation onSubmit={this.handleSubmit} />
-        <Home onSubmit={this.handleSubmit} />
-      </div>
+      <BrowserRouter>
+        <div className='wrapper'>
+          <Navigation onSubmit={this.handleSubmit} />
+          <Route exact path='/' render={() => <Home onSubmit={this.handleSubmit} />} />
+        </div>
+      </BrowserRouter>
     )
   }
 }
