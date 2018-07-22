@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class AddressForm extends React.Component {
   constructor(props) {
@@ -9,7 +10,6 @@ class AddressForm extends React.Component {
     }
 
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
@@ -20,15 +20,9 @@ class AddressForm extends React.Component {
     });
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
-    
-    this.props.onSubmit(this.state.address);
-  }
-
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form>
         <input
           id='address'
           placeholder='Brno, Czechia'
@@ -37,12 +31,14 @@ class AddressForm extends React.Component {
           value={this.state.address}
           onChange={this.handleChange}
         />
-        <button
-          type='submit'
-          disabled={!this.state.address}
-        >
+        <Link
+          className='button'
+          to={{
+            pathname: '/forecast',
+            search: `?address=${this.state.address}`
+          }}>
           Get Weather
-        </button>
+        </Link>
       </form>
     )
   }
