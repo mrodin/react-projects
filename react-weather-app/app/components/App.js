@@ -7,7 +7,7 @@ import Forecast from './Forecast';
 export default function App() {
   return (
     <BrowserRouter>
-      <div className='wrapper'>
+      <div className='app__container column'>
         <Navigation />
         <Switch>
           <Route exact path='/' component={Home} />} />

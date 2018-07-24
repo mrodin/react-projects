@@ -22,24 +22,27 @@ class AddressForm extends React.Component {
 
   render() {
     return (
-      <form>
-        <input
-          id='address'
-          placeholder='Brno, Czechia'
-          type='text'
-          autoComplete='off'
-          value={this.state.address}
-          onChange={this.handleChange}
-        />
-        <Link
-          className='button'
-          to={{
-            pathname: '/forecast',
-            search: `?address=${this.state.address}`
-          }}>
-          Get Weather
+      <div className='column column--center'>
+        <form className='column column--center'>
+          <input
+            className='address-form__input'
+            id='address'
+            placeholder='Brno, Czechia'
+            type='text'
+            autoComplete='off'
+            value={this.state.address}
+            onChange={this.handleChange}
+          />
+          <Link
+            className='address-form__button'
+            to={{
+              pathname: '/forecast',
+              search: `?address=${this.state.address}`
+            }}>
+            Get Weather
         </Link>
-      </form>
+        </form>
+      </div>
     )
   }
 }

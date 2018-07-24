@@ -3,11 +3,11 @@ import AddressForm from './AddressForm';
 
 export default function Navigation(props) {
   return (
-    <nav>
-      <div className='app-title'>
-        <a href="#">React Weather App</a>
+    <nav className='nav row'>
+      <div className='nav__title'>
+        <a href="#" className='nav__link'>React Weather App</a>
       </div>
-      <AddressForm onSubmit={props.onSubmit} />
+      <AddressForm />
     </nav>
   )
 }

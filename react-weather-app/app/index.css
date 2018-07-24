@@ -1,5 +1,5 @@
 /**
-* GLOBAL STYLES
+* UTILITY
 */
 
 * {
@@ -9,31 +9,45 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.wrapper {
+.column {
   display: flex;
-  height: 100vh;
   flex-direction: column;
+}
+
+.column--center {
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+/**
+* APP
+*/
+
+.app__container {
+  height: 100vh;
 }
 
 /**
 * NAVIGATION
 */
 
-nav {
-  display: flex;
+.nav {
   background: #39A6C2;
   padding: 1em;
   justify-content: space-between;
 }
 
-.app-title {
+.nav__title {
   font-size: 2em;
   font-weight: 100;
 }
 
-.app-title a {
+.nav__link {
   text-decoration: none;
-  display: block;
   color: white;
 }
 
@@ -41,29 +55,24 @@ nav {
 * HOME
 */
 
-.home-wrapper {
-  display: flex;
+.home__container {
   justify-content: center;
-  align-items: center;
   background: url('./trianglify.svg');
   flex: 1;
-  overflow: hidden;
 }
 
-.form-wrapper, .form-wrapper form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.hint {
+.home__hint {
   font-size: 2.5em;
   font-weight: 100;
   color: white;
   padding: 0.3em;
 }
 
-input {
+/**
+* ADDRESS FORM
+*/
+
+.address-form__input {
   width: 250px;
   height: 40px;
   border: 1px solid #39A6C2;
@@ -73,7 +82,7 @@ input {
   color: #586069
 }
 
-.button {
+.address-form__button {
   width: 150px;
   height: 40px;
   border: none;
