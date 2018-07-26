@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 class AddressForm extends React.Component {
@@ -23,7 +24,7 @@ class AddressForm extends React.Component {
   render() {
     return (
       <div className='column column--center'>
-        <form className='column column--center'>
+        <form className={this.props.direction}>
           <input
             className='address-form__input'
             id='address'
@@ -45,6 +46,10 @@ class AddressForm extends React.Component {
       </div>
     )
   }
+}
+
+AddressForm.propTypes = {
+  direction: PropTypes.string.isRequired
 }
 
 export default AddressForm;
