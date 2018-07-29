@@ -1,7 +1,28 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import queryString from 'query-string';
 import Loader from './Loader';
-import { getCurrentWeather } from '../utils/api';
+import { get7DayForecast } from '../utils/api';
+
+function ForecastGrid(props) {
+  const city = props.city;
+  const forecast = props.forecast;
+  
+  return (
+    <div>
+      <h1>{`${city.name}, ${city.country}`}</h1>
+      <ul>
+        {forecast.map((day) => (
+          <li key={day.dt}>{day.dt}</li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+ForecastGrid.propTypes = {
+  city: PropTypes.object.isRequired
+}
 
 class Forecast extends React.Component {
   constructor(props) {
@@ -24,7 +45,7 @@ class Forecast extends React.Component {
     // reset forecast to null before fetching new data
     this.setState(() => { return { forecast: null } });
 
-    const forecast = await getCurrentWeather(address);
+    const forecast = await get7DayForecast(address);
     this.setState(() => { return { forecast: forecast } });
   }
 
@@ -33,7 +54,11 @@ class Forecast extends React.Component {
 
     return (
       <div>
-        {!forecast ? <Loader /> : <p>Loading finished.</p>}
+        {!forecast
+          ? <Loader />
+          : <ForecastGrid
+            city={forecast.city}
+            forecast={forecast.list} />}
       </div>
     )
   }
