@@ -5,15 +5,21 @@ import Loader from './Loader';
 import { get7DayForecast } from '../utils/api';
 
 function ForecastGrid(props) {
-  const city = props.city;
-  const forecast = props.forecast;
-  
+  const { city } = props;
+  const { forecast } = props;
+
   return (
     <div>
       <h1>{`${city.name}, ${city.country}`}</h1>
       <ul>
         {forecast.map((day) => (
-          <li key={day.dt}>{day.dt}</li>
+          <li key={day.dt}>
+            <ul>
+              <li>{day.weather[0].icon}</li>
+              <li>{day.dt}</li>
+              <li>{day.temp.day}</li>
+            </ul>
+          </li>
         ))}
       </ul>
     </div>
