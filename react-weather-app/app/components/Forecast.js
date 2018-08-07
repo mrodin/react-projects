@@ -9,20 +9,23 @@ function ForecastGrid(props) {
   const { forecast } = props;
 
   return (
-    <div>
-      <h1>{`${city.name}, ${city.country}`}</h1>
-      <ul>
+    <React.Fragment>
+      <h1 className='forecast-grid__address'>{`${city.name}, ${city.country}`}</h1>
+      <ul className='row forecast-grid__container'>
         {forecast.map((day) => (
           <li key={day.dt}>
             <ul>
-              <li>{day.weather[0].icon}</li>
+              <li>
+                <img src={`../assets/weather-icons/${day.weather[0].icon}.svg`}
+                  alt={day.weather[0].description} />
+              </li>
               <li>{day.dt}</li>
               <li>{day.temp.day}</li>
             </ul>
           </li>
         ))}
       </ul>
-    </div>
+    </React.Fragment>
   )
 }
 

@@ -9,6 +9,10 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+ul {
+  list-style: none;
+}
+
 .column {
   display: flex;
   flex-direction: column;
@@ -118,4 +122,17 @@
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+/**
+* FORECAST
+*/
+
+.forecast-grid__address {
+  text-align: center;
+}
+
+.forecast-grid__container {
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
