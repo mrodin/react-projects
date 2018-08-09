@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import queryString from 'query-string';
 import Loader from './Loader';
 import { get7DayForecast } from '../utils/api';
+import { convertUnixTimestampToDate, convertKelvintoCelsius } from '../utils/helpers';
 
 function ForecastGrid(props) {
   const { city } = props;
@@ -10,8 +11,8 @@ function ForecastGrid(props) {
 
   return (
     <React.Fragment>
-      <h1 className='forecast-grid__address'>{`${city.name}, ${city.country}`}</h1>
-      <ul className='row forecast-grid__container'>
+      <h1 className='forecast-grid__address mm-top'>{`${city.name}, ${city.country}`}</h1>
+      <ul className='row forecast-grid__container mm-top'>
         {forecast.map((day) => (
           <li key={day.dt}>
             <ul>
@@ -19,8 +20,8 @@ function ForecastGrid(props) {
                 <img src={`../assets/weather-icons/${day.weather[0].icon}.svg`}
                   alt={day.weather[0].description} />
               </li>
-              <li>{day.dt}</li>
-              <li>{day.temp.day}</li>
+              <li>{convertUnixTimestampToDate(day.dt)}</li>
+              <li>{convertKelvintoCelsius(day.temp.day)} °C</li>
             </ul>
           </li>
         ))}
@@ -62,7 +63,7 @@ class Forecast extends React.Component {
     const { forecast } = this.state;
 
     return (
-      <div>
+      <div className='forecast__container'>
         {!forecast
           ? <Loader />
           : <ForecastGrid

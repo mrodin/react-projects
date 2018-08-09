@@ -27,6 +27,11 @@ ul {
   flex-direction: row;
 }
 
+/* Medium Margin Top */
+.mm-top {
+  margin-top: 30px;
+}
+
 /**
 * APP
 */
@@ -61,7 +66,7 @@ ul {
 
 .home__container {
   justify-content: center;
-  background: url('./trianglify.svg');
+  background: url('../assets/trianglify.svg');
   flex: 1;
 }
 
@@ -126,6 +131,14 @@ ul {
 
 /**
 * FORECAST
+*/
+
+.forecast__container {
+  padding: 0 50px 0 50px;
+}
+
+/**
+* FORECAST GRID
 */
 
 .forecast-grid__address {
