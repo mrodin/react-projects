@@ -5,6 +5,6 @@ export function convertUnixTimestampToDate(unixTimestamp) {
   return `${days[date.getDay()]}, ${months[date.getMonth()]} ${date.getDate()}`;
 }
 
-export function convertKelvintoCelsius(temp) {
+export function convertKelvinToCelsius(temp) {
   return Math.round(temp - 273.15);
 }

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import queryString from 'query-string';
 import Loader from './Loader';
 import { get7DayForecast } from '../utils/api';
-import { convertUnixTimestampToDate, convertKelvintoCelsius } from '../utils/helpers';
+import { convertUnixTimestampToDate, convertKelvinToCelsius } from '../utils/helpers';
 
 function ForecastGrid(props) {
   const { city } = props;
@@ -21,7 +21,7 @@ function ForecastGrid(props) {
                   alt={day.weather[0].description} />
               </li>
               <li>{convertUnixTimestampToDate(day.dt)}</li>
-              <li>{convertKelvintoCelsius(day.temp.day)} °C</li>
+              <li>{convertKelvinToCelsius(day.temp.day)} °C</li>
             </ul>
           </li>
         ))}
