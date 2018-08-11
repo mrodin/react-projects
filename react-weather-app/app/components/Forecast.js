@@ -11,14 +11,15 @@ function ForecastGrid(props) {
 
   return (
     <React.Fragment>
-      <h1 className='forecast-grid__address mm-top'>{`${city.name}, ${city.country}`}</h1>
-      <ul className='row forecast-grid__container mm-top'>
+      <h2 className='forecast-grid__address mm-top title-text title-text--grey'>{`${city.name}, ${city.country}`}</h2>
+      <ul className='row forecast-grid__container'>
         {forecast.map((day) => (
           <li key={day.dt}>
-            <ul>
+            <ul className='column column--center forecast-grid__day-container'>
               <li>
                 <img src={`../assets/weather-icons/${day.weather[0].icon}.svg`}
-                  alt={day.weather[0].description} />
+                  alt={day.weather[0].description}
+                  className='forecast-grid__icon' />
               </li>
               <li>{convertUnixTimestampToDate(day.dt)}</li>
               <li>{convertKelvinToCelsius(day.temp.day)} °C</li>
@@ -63,7 +64,7 @@ class Forecast extends React.Component {
     const { forecast } = this.state;
 
     return (
-      <div className='forecast__container'>
+      <div>
         {!forecast
           ? <Loader />
           : <ForecastGrid

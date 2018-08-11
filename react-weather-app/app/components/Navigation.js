@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export default function Navigation() {
   return (
     <nav className='nav row'>
-      <div className='nav__title'>
+      <h1 className='nav__title'>
         <Link
           className='nav__link'
           to={{
@@ -13,7 +13,7 @@ export default function Navigation() {
           }}>
           React Weather App
         </Link>
-      </div>
+      </h1>
       <AddressForm direction={'row'} />
     </nav>
   )

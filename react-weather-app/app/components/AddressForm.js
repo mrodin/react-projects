@@ -28,7 +28,7 @@ class AddressForm extends React.Component {
           <input
             className='address-form__input'
             id='address'
-            placeholder='Brno, Czechia'
+            placeholder='Brno, CZ'
             type='text'
             autoComplete='off'
             value={this.state.address}
