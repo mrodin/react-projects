@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import queryString from 'query-string';
 import Loader from './Loader';
+import { Link } from 'react-router-dom';
 import { get7DayForecast } from '../utils/api';
 import { convertUnixTimestampToDate, convertKelvinToCelsius } from '../utils/helpers';
 
@@ -15,15 +16,21 @@ function ForecastGrid(props) {
       <ul className='row forecast-grid__container'>
         {forecast.map((day) => (
           <li key={day.dt}>
-            <ul className='column column--center forecast-grid__day-container'>
-              <li>
-                <img src={`../assets/weather-icons/${day.weather[0].icon}.svg`}
-                  alt={day.weather[0].description}
-                  className='forecast-grid__icon' />
-              </li>
-              <li>{convertUnixTimestampToDate(day.dt)}</li>
-              <li>{convertKelvinToCelsius(day.temp.day)} °C</li>
-            </ul>
+            <Link to={{
+              pathname: 'forecast/detail',
+              search: `?address=${city.name}&dt=${day.dt}`,
+              state: { forecast: day }
+            }}>
+              <ul className='column column--center forecast-grid__day-container'>
+                <li>
+                  <img src={`../assets/weather-icons/${day.weather[0].icon}.svg`}
+                    alt={day.weather[0].description}
+                    className='forecast-grid__icon' />
+                </li>
+                <li>{convertUnixTimestampToDate(day.dt)}</li>
+                <li>{convertKelvinToCelsius(day.temp.day)} °C</li>
+              </ul>
+            </Link>
           </li>
         ))}
       </ul>
