@@ -8,3 +8,7 @@ export function convertUnixTimestampToDate(unixTimestamp) {
 export function convertKelvinToCelsius(temp) {
   return Math.round(temp - 273.15);
 }
+
+export function capitalizeFirstLetter(str) {
+  return str.replace(/^\w/, c => c.toUpperCase());
+}

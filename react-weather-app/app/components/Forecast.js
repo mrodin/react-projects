@@ -16,11 +16,13 @@ function ForecastGrid(props) {
       <ul className='row forecast-grid__container'>
         {forecast.map((day) => (
           <li key={day.dt}>
-            <Link to={{
-              pathname: 'forecast/detail',
-              search: `?address=${city.name}&dt=${day.dt}`,
-              state: { forecast: day }
-            }}>
+            <Link
+              className='row'
+              to={{
+                pathname: 'forecast/detail',
+                search: `?address=${city.name}&dt=${day.dt}`,
+                state: { city: city, forecast: day }
+              }}>
               <ul className='column column--center forecast-grid__day-container'>
                 <li>
                   <img src={`../assets/weather-icons/${day.weather[0].icon}.svg`}
