@@ -6,19 +6,22 @@ import {
 } from '../utils/helpers';
 
 export default function Detail(props) {
+  const { city } = props.location.state;
+  const { forecast } = props.location.state;
+  
   return (
-    <ul>
+    <ul className='column column--center text'>
       <li>
-        <img src={`../assets/weather-icons/${props.location.state.forecast.weather[0].icon}.svg`}
-          alt={props.location.state.forecast.weather[0].description}
-          className='forecast-grid__icon' />
+        <img src={`../assets/weather-icons/${forecast.weather[0].icon}.svg`}
+          alt={forecast.weather[0].description}
+          className='forecast-icon mm-top' />
       </li>
-      <li>{convertUnixTimestampToDate(props.location.state.forecast.dt)}</li>
-      <li>{`${props.location.state.city.name}, ${props.location.state.city.country}`}</li>
-      <li>{capitalizeFirstLetter(props.location.state.forecast.weather[0].description)}</li>
-      <li>{`Min temp: ${convertKelvinToCelsius(props.location.state.forecast.temp.min)}`}</li>
-      <li>{`Max temp: ${convertKelvinToCelsius(props.location.state.forecast.temp.max)}`}</li>
-      <li>{`Humidity: ${props.location.state.forecast.humidity}`}</li>
+      <li>{convertUnixTimestampToDate(forecast.dt)}</li>
+      <li className='text--important mm-top'>{`${city.name}, ${city.country}`}</li>
+      <li>{capitalizeFirstLetter(forecast.weather[0].description)}</li>
+      <li>{`Min temp: ${convertKelvinToCelsius(forecast.temp.min)}`}</li>
+      <li>{`Max temp: ${convertKelvinToCelsius(forecast.temp.max)}`}</li>
+      <li>{`Humidity: ${forecast.humidity}`}</li>
     </ul>
   )
 }

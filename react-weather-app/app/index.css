@@ -1,5 +1,5 @@
 /**
-* UTILITY
+* GENERAL
 */
 
 * {
@@ -17,6 +17,10 @@ ul {
   list-style: none;
 }
 
+/**
+* UTILITY
+*/
+
 .column {
   display: flex;
   flex-direction: column;
@@ -31,27 +35,43 @@ ul {
   flex-direction: row;
 }
 
-.title-text {
-  font-size: 2.5rem;
-  font-weight: 100;
-  color: white;
-  padding: 0.3rem;
-}
-
-.title-text--grey {
-  color: #636363;
-}
-
 /* Medium Margin Top */
 .mm-top {
   margin-top: 2.5rem;
 }
 
 /**
+* TEXT
+*/
+
+.text {
+  font-weight: 100;
+  color: #636363;
+  font-size: 1.5rem;
+}
+
+.text--title {
+  font-size: 2rem;
+}
+
+.text--important {
+  font-size: 2.5rem;
+  padding: 0.3rem;
+}
+
+.text--white {
+  color: white;
+}
+
+.text--center {
+  text-align: center;
+}
+
+/**
 * APP
 */
 
-.app__container {
+.app-container {
   height: 100vh;
 }
 
@@ -65,21 +85,11 @@ ul {
   justify-content: space-between;
 }
 
-.nav__title {
-  font-size: 2rem;
-  font-weight: 100;
-}
-
-.nav__link {
-  text-decoration: none;
-  color: white;
-}
-
 /**
 * HOME
 */
 
-.home__container {
+.home-container {
   justify-content: center;
   background: url('../assets/trianglify.svg');
   flex: 1;
@@ -138,27 +148,20 @@ ul {
 }
 
 /**
-* FORECAST GRID
+* FORECAST
 */
 
-.forecast-grid__address {
-  text-align: center;
-}
-
-.forecast-grid__container {
+.forecast-grid-container {
   justify-content: space-around;
   flex-wrap: wrap;
   padding: 0 15%;
 }
 
-.forecast-grid__day-container {
+.forecast-grid-day-container {
   padding: 4rem;
-  font-size: 24px;
-  font-weight: 100;
-  color: #636363;
 }
 
-.forecast-grid__icon {
+.forecast-icon {
   width: 10rem;
   height: 10rem;
 }

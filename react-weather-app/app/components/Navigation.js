@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 export default function Navigation() {
   return (
     <nav className='nav row'>
-      <h1 className='nav__title'>
+      <h1 className='text text--title'>
         <Link
-          className='nav__link'
+          className='text--white'
           to={{
             pathname: '/'
           }}>

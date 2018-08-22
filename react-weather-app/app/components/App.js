@@ -8,7 +8,7 @@ import Detail from './Detail';
 export default function App() {
   return (
     <BrowserRouter>
-      <div className='app__container column'>
+      <div className='app-container column'>
         <Navigation />
         <Switch>
           <Route exact path='/' component={Home} />} />

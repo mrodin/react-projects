@@ -12,8 +12,8 @@ function ForecastGrid(props) {
 
   return (
     <React.Fragment>
-      <h2 className='forecast-grid__address mm-top title-text title-text--grey'>{`${city.name}, ${city.country}`}</h2>
-      <ul className='row forecast-grid__container'>
+      <h2 className='mm-top text text--important text--center'>{`${city.name}, ${city.country}`}</h2>
+      <ul className='row forecast-grid-container'>
         {forecast.map((day) => (
           <li key={day.dt}>
             <Link
@@ -23,11 +23,11 @@ function ForecastGrid(props) {
                 search: `?address=${city.name}&dt=${day.dt}`,
                 state: { city: city, forecast: day }
               }}>
-              <ul className='column column--center forecast-grid__day-container'>
+              <ul className='column column--center text forecast-grid-day-container'>
                 <li>
                   <img src={`../assets/weather-icons/${day.weather[0].icon}.svg`}
                     alt={day.weather[0].description}
-                    className='forecast-grid__icon' />
+                    className='forecast-icon' />
                 </li>
                 <li>{convertUnixTimestampToDate(day.dt)}</li>
                 <li>{convertKelvinToCelsius(day.temp.day)} °C</li>
