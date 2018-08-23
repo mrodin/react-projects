@@ -132,6 +132,7 @@ ul {
   border-top: 16px solid #39A6C2;
   width: 120px;
   height: 120px;
+  margin: auto;
   -webkit-animation: spin 2s linear infinite; /* Safari */
   animation: spin 2s linear infinite;
 }

@@ -73,13 +73,13 @@ class Forecast extends React.Component {
     const { forecast } = this.state;
 
     return (
-      <div>
+      <React.Fragment>
         {!forecast
           ? <Loader />
           : <ForecastGrid
             city={forecast.city}
             forecast={forecast.list} />}
-      </div>
+      </React.Fragment>
     )
   }
 }
