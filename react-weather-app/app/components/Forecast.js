@@ -25,7 +25,7 @@ function ForecastGrid(props) {
               }}>
               <ul className='column column--center text forecast-grid-day-container'>
                 <li>
-                  <img src={`../assets/weather-icons/${day.weather[0].icon}.svg`}
+                  <img src={`https://mr-freehost.neocities.org/weather-icons/${day.weather[0].icon}.svg`}
                     alt={day.weather[0].description}
                     className='forecast-icon' />
                 </li>
@@ -59,6 +59,13 @@ class Forecast extends React.Component {
     const { address } = queryString.parse(this.props.location.search);
 
     this.getForecast(address);
+  }
+
+  componentDidUpdate(prevProps) {    
+    if (this.props.location.search !== prevProps.location.search) {
+      const { address } = queryString.parse(this.props.location.search);
+      this.getForecast(address);
+    }
   }
 
   async getForecast(address) {
