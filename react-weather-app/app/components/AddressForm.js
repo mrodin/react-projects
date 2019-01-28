@@ -1,16 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 class AddressForm extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      address: ''
+      address: '',
+      redirect: false
     }
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
@@ -21,10 +23,27 @@ class AddressForm extends React.Component {
     });
   }
 
+  handleSubmit(event) {
+    event.preventDefault();
+
+    if (this.state.address != '') {
+      this.setState(() => {
+        return { redirect: true }
+      });
+    }
+  }
+
   render() {
+    if (this.state.redirect) {
+      return <Redirect push to={{
+        pathname: '/forecast',
+        search: `?address=${this.state.address}`
+      }} />
+    }
+
     return (
       <div className='column column--center'>
-        <form className={this.props.direction}>
+        <form className={this.props.direction} onSubmit={this.handleSubmit}>
           <input
             className='address-form__input'
             id='address'
@@ -34,14 +53,7 @@ class AddressForm extends React.Component {
             value={this.state.address}
             onChange={this.handleChange}
           />
-          <Link
-            className='address-form__button'
-            to={{
-              pathname: '/forecast',
-              search: `?address=${this.state.address}`
-            }}>
-            Get Weather
-        </Link>
+          <button type='submit' className='address-form__button'>Get Weather</button>
         </form>
       </div>
     )
