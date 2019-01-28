@@ -35,6 +35,10 @@ class AddressForm extends React.Component {
 
   render() {
     if (this.state.redirect) {
+      this.setState(() => {
+        return { redirect: false }
+      })
+
       return <Redirect push to={{
         pathname: '/forecast',
         search: `?address=${this.state.address}`

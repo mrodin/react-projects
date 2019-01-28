@@ -12,7 +12,7 @@ export default function Detail(props) {
   return (
     <ul className='column column--center text'>
       <li>
-        <img src={`../assets/weather-icons/${forecast.weather[0].icon}.svg`}
+        <img src={`https://mr-freehost.neocities.org/weather-icons/${forecast.weather[0].icon}.svg`}
           alt={forecast.weather[0].description}
           className='forecast-icon mm-top' />
       </li>
